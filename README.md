@@ -1,5 +1,4 @@
-#Preguntas proyecto LM BBDD
-
+# Preguntas proyecto LM BBDD
 1. Lista los nombres de los socios y el total de dni
 2. Muestra la referencia de la pelicula que empiece por D
 3. 
