@@ -1,7 +1,7 @@
 CREATE DATABASE proyecto_LMBBDD
 
 create user 'oscar'@'%'identified by '1234';
-grant all privileges on proyecto_LMBBDD.*to 'usuario'@'%';
+grant all privileges on proyecto_LMBBDD.*to 'oscar'@'%';
 flush privileges;
 
 use proyecto_LMBBDD
