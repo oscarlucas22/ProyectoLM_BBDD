@@ -1,3 +1,11 @@
+CREATE DATABASE proyecto_LMBBDD
+
+create user 'oscar'@'%'identified by '1234';
+grant all privileges on proyecto_LMBBDD.*to 'usuario'@'%';
+flush privileges;
+
+use proyecto_LMBBDD
+
 CREATE TABLE SOCIOS (
     DNI VARCHAR (10) PRIMARY KEY NOT NULL,
     Nombre VARCHAR (20) NOT NULL,
