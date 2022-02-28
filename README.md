@@ -1,7 +1,7 @@
 # Preguntas proyecto LM BBDD
-1. Lista los nombres de los socios y el total de dni
-2. Muestra la referencia de la pelicula que empiece por D
-3. Muestra el nombre de las peliculas y en el año que se han estrenado
-4. Inserta en la tabla SOCIOS un telefono y una categoria
-5. Elimina los directores de las peliculas
-6. Actualiza el importe de los prestamos 
+1. Lista informacion de los socios e indica el total de socios
+2. Muestra el nombre de las pelicula que empiece por L
+3. Muestra el nombre de las peliculas y su fecha de preestreno
+4. Inserta en la tabla SOCIOS un registro para el dni, nombre y direccion
+5. Elimina los importes superiores a 400
+6. Actualiza el importe de un porcentaje introducido por teclado 
