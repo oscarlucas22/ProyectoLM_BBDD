@@ -34,6 +34,20 @@ while opcion != 0:
         socio["Direccion"]=input("Direccion:")
         Insertar_Socio(db,socio)
     
+    elif opcion == 5:
+        print("-----------------------------------------------------")
+        print("Los dni de la tabla SOCIOS")
+        print("-----------------------------------------------------")
+        borrar(db)
+        print()
+        d=input("Introduce un DNI para borrar la columna correspondiente a este:")
+        Borrar_Socio(db,d)
+        print("-----------------------------------------------------")
+        print("Los dni de la tabla SOCIOS despues del proceso de borrado")
+        print("-----------------------------------------------------")
+        borrar_dni(db)
+        print()
+        
     else:
         print("Opcion incorrecta.")
 
