@@ -65,3 +65,30 @@ def Mostrar_NombrePelicula(db):
     except:
         print("Error al hacer la consulta")
         db.rollback()
+#3
+def ano(db):
+    sql="SELECT AnoEstreno, NombrePelicula FROM PELICULAS"
+    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+    try:
+        cursor.execute(sql)
+        registros = cursor.fetchall()
+        for registro in registros:
+            print("-- Año Estreno:",registro["AnoEstreno"],"-- Nombre Pelicula:",registro["NombrePelicula"])
+    except:
+        print("Error al hacer la consulta")
+def Mostrar_NombrePeliculaHoy(db,ano):
+    print("-----------------------------------------------------")
+    print("Nombre de la pelicula del año introducido")
+    print("-----------------------------------------------------")
+    sql = "SELECT NombrePelicula as 'NombrePeliculaAno' FROM PELICULAS WHERE AnoEstreno = %d" % ano
+    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+    try:
+        cursor.execute(sql)
+        if cursor.rowcount==0:
+            print("No ninguna con ese año")
+        else:
+            registros = cursor.fetchall()
+            for registro in registros:
+                print("-- Nombre de la pelicula:",registro["NombrePeliculaAno"])
+    except:
+        print("Error al hacer la consulta")
