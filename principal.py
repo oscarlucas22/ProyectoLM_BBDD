@@ -23,3 +23,20 @@ while opcion != 0:
         print()
         año = int(input("Año de Estreno:"))
         Mostrar_NombrePeliculaHoy(db,año)
+    
+    elif opcion == 4:
+        print("-----------------------------------------------------")
+        print("Insercion de socio")
+        print("-----------------------------------------------------")
+        socio={}
+        socio["DNI"]=input("DNI:")
+        socio["Nombre"]=input("Nombre:")
+        socio["Direccion"]=input("Direccion:")
+        Insertar_Socio(db,socio)
+    
+    else:
+        print("Opcion incorrecta.")
+
+    opcion=MostrarMenu()
+print("Ha salido del programa")
+Desconectar_BD(db)
