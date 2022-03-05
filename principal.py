@@ -47,6 +47,16 @@ while opcion != 0:
         print("-----------------------------------------------------")
         borrar_dni(db)
         print()
+     
+    elif opcion == 6:
+        print("-----------------------------------------------------")
+        print("Los dni y los importes de la tabla PRESTAMOS")
+        print("-----------------------------------------------------")
+        dni(db)
+        print()
+        impot=int(input("Nuevo Importe a introducir:"))
+        d=input("Introduce un DNI para actualizar la columna del importe correspondiente a este:")
+        Actualizar_Importe(db,impot,d)
         
     else:
         print("Opcion incorrecta.")
