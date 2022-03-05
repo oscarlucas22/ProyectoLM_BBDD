@@ -1,7 +1,8 @@
-CREATE DATABASE proyectoLM_BD;
-CREATE USER 'usuario'@'%' IDENTIFIED BY 'asdasd'; 
+CREATE USER 'usuario'@'%'IDENTIFIED BY 'asdasd'; 
 GRANT ALL PRIVILEGES ON proyectoLM_BD.* to 'usuario'@'%';
 FLUSH PRIVILEGES;
+
+CREATE DATABASE proyectoLM_BD;
 USE proyectoLM_BD;
 
 CREATE TABLE SOCIOS (
@@ -15,9 +16,8 @@ CREATE TABLE PELICULAS (
     NombrePelicula VARCHAR (20) NOT NULL,
     Genero VARCHAR (20) NOT NULL,
     Director VARCHAR (20),
-    AnoEstreno DATE,
-    Nacionalidad VARCHAR (20) NOT NULL,
-    CONSTRAINT anoestreno_check CHECK (YEAR(AnoEstreno) > 1900)
+    AnoEstreno VARCHAR(4),
+    Nacionalidad VARCHAR (20) NOT NULL
 );
 
 CREATE TABLE PRESTAMOS (
@@ -39,13 +39,13 @@ INSERT INTO SOCIOS VALUES ('666-F','Benjamin','Montequinto');
 INSERT INTO SOCIOS VALUES ('777-G','Carlos','Los Remedios');
 INSERT INTO SOCIOS VALUES ('888-H','Manolo','Montequinto');
 
-INSERT INTO PELICULAS VALUES ('CF-1','Dune','Ciencia-ficcion','Edwards','1984-12-12','Estadounidense');
-INSERT INTO PELICULAS VALUES ('D-1','Los Idiotas','Drama','Von Trier','1999-12-12','Sueca');
-INSERT INTO PELICULAS VALUES ('D-2','Kramer vs Kramer','Drama','Smith','1978-12-12','Estadounidense');
-INSERT INTO PELICULAS VALUES ('CF-2','Mision Imposible','Ciencia-ficcion','Johnson','1998-12-12','Estadounidense');
-INSERT INTO PELICULAS VALUES ('D-3','Mi nombre es Joe','Drama','Loach','1995-12-12','Britanica');
-INSERT INTO PELICULAS VALUES ('D-4','Rompiendo las olas','Drama','Von Trier','1997-12-12','Sueca');
-INSERT INTO PELICULAS VALUES ('S-1','Los Otros','Suspense','Amenabar','2001-12-12','Española');
+INSERT INTO PELICULAS VALUES ('CF-1','Dune','Ciencia-ficcion','Edwards','1984','Estadounidense');
+INSERT INTO PELICULAS VALUES ('D-1','Los Idiotas','Drama','Von Trier','1999','Sueca');
+INSERT INTO PELICULAS VALUES ('D-2','Kramer vs Kramer','Drama','Smith','1978','Estadounidense');
+INSERT INTO PELICULAS VALUES ('CF-2','Mision Imposible','Ciencia-ficcion','Johnson','1998','Estadounidense');
+INSERT INTO PELICULAS VALUES ('D-3','Mi nombre es Joe','Drama','Loach','1995','Britanica');
+INSERT INTO PELICULAS VALUES ('D-4','Rompiendo las olas','Drama','Von Trier','1997','Sueca');
+INSERT INTO PELICULAS VALUES ('S-1','Los Otros','Suspense','Amenabar','2001','Española');
 
 INSERT INTO PRESTAMOS VALUES ('111-A','CF-1','2018-10-01',350);
 INSERT INTO PRESTAMOS VALUES ('333-C','D-1','2019-11-01',300);
