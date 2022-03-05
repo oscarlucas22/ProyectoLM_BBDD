@@ -92,3 +92,27 @@ def Mostrar_NombrePeliculaHoy(db,ano):
                 print("-- Nombre de la pelicula:",registro["NombrePeliculaAno"])
     except:
         print("Error al hacer la consulta")
+#4
+def Insertar_Socio(db,socio):
+    cursor = db.cursor()
+    sql = "INSERT INTO SOCIOS VALUES ('%s', '%s', '%s')" % (socio["DNI"],socio["Nombre"],socio["Direccion"])
+    try:
+        cursor.execute(sql)
+        db.commit()
+    except:
+        print("Error al insertar.")
+        db.rollback()
+        print("\r")
+    print("-----------------------------------------------------")
+    print("Tabla SOCIOS")
+    print("-----------------------------------------------------")
+    sql2 = "SELECT * FROM SOCIOS"
+    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+    try:
+        cursor.execute(sql2)
+        registros = cursor.fetchall()
+        for registro in registros:
+            print("-- DNI:",registro["DNI"],"-- Nombre:",registro["Nombre"],"-- Direccion:",registro["Direccion"])
+    except:
+        print("Error al hacer la consulta")
+        db.rollback()
