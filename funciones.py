@@ -117,7 +117,7 @@ def Insertar_Socio(db,socio):
         print("Error al hacer la consulta")
         db.rollback()
 
-  def MostrarMenu():
+def MostrarMenu():
     menu = '''
 1. Lista informacion de los socios e indica el total de socios
 2. Muestra el nombre de las pelicula que empiece por L
