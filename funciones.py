@@ -152,6 +152,41 @@ def borrar_dni(db):
             print("-- DNI:",registro["DNI"])
     except:
         print("Error al hacer la consulta")
+
+#6
+def dni(db):
+    sql="SELECT DNI_fk, Importe FROM PRESTAMOS"
+    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+    try:
+        cursor.execute(sql)
+        registros = cursor.fetchall()
+        for registro in registros:
+            print("-- DNI:",registro["DNI_fk"],"-- Importe:",registro["Importe"])
+    except:
+        print("Error al hacer la consulta")
+def Actualizar_Importe(db, importe, dni):
+    print("-----------------------------------------------------")
+    print("Actualizacion del importe")
+    print("-----------------------------------------------------")
+    sql = "UPDATE PRESTAMOS SET Importe=%d WHERE DNI_fk='%s'" % (importe,dni)
+    cursor = db.cursor()
+    try:
+        cursor.execute(sql)
+        db.commit()
+    except:
+        print("Error al hacer la actualizacion")
+        db.rollback()
+    sql2 = "SELECT * FROM PRESTAMOS"
+    cursor2 = db.cursor()
+    try:
+        cursor2.execute(sql2)
+        registros=cursor2.fetchall()
+        print("Asi se veria la tabla PRESTAMOS despues del proceso:")
+        print("\r")
+        for registro in registros:
+            print(registro)
+    except:
+        print("Error al mostrar la consulta")
         
 def MostrarMenu():
     menu = '''
