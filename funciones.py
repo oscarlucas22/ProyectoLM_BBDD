@@ -116,3 +116,22 @@ def Insertar_Socio(db,socio):
     except:
         print("Error al hacer la consulta")
         db.rollback()
+
+  def MostrarMenu():
+    menu = '''
+1. Lista informacion de los socios e indica el total de socios
+2. Muestra el nombre de las pelicula que empiece por L
+3. Muestra el nombre de las peliculas que estan presentadas en el año introducido por teclado
+4. Inserta en la tabla SOCIOS un nuevo registro que introduciras por teclado
+5. Elimina el socio con el DNI que introduzcas por teclado
+6. Actualiza el importe a partir de un porcentaje introducido por teclado
+0. Salir del programa
+'''
+
+    print(menu)
+    while True:
+        try:
+            opcion = int(input("Opcion: "))
+            return opcion
+        except:
+            print("Opcion incorrecta, debe ser un numero")      
