@@ -14,3 +14,12 @@ while opcion != 0:
         nombre(db)
         print()
         Mostrar_NombrePelicula(db)
+    
+    elif opcion == 3:
+        print("-----------------------------------------------------")
+        print("Los años de estreno de la tabla PELICULAS")
+        print("-----------------------------------------------------")
+        ano(db)
+        print()
+        año = int(input("Año de Estreno:"))
+        Mostrar_NombrePeliculaHoy(db,año)
