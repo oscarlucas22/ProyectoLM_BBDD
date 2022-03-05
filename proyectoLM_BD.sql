@@ -1,6 +1,6 @@
 CREATE DATABASE proyectoLM_BD;
 CREATE USER 'usuario'@'%' IDENTIFIED BY 'asdasd'; 
-GRANT ALL PRIVILEGES ON testdb.* to 'usuario'@'%';
+GRANT ALL PRIVILEGES ON proyectoLM_BD.* to 'usuario'@'%';
 FLUSH PRIVILEGES;
 USE proyectoLM_BD;
 
