@@ -116,7 +116,6 @@ def Insertar_Socio(db,socio):
     except:
         print("Error al hacer la consulta")
         db.rollback()
-
 #5
 def borrar(db):
     sql="SELECT DNI FROM SOCIOS"
@@ -152,7 +151,6 @@ def borrar_dni(db):
             print("-- DNI:",registro["DNI"])
     except:
         print("Error al hacer la consulta")
-
 #6
 def dni(db):
     sql="SELECT DNI_fk, Importe FROM PRESTAMOS"
@@ -187,7 +185,7 @@ def Actualizar_Importe(db, importe, dni):
             print(registro)
     except:
         print("Error al mostrar la consulta")
-        
+
 def MostrarMenu():
     menu = '''
 1. Lista informacion de los socios e indica el total de socios
@@ -195,7 +193,7 @@ def MostrarMenu():
 3. Muestra el nombre de las peliculas que estan presentadas en el año introducido por teclado
 4. Inserta en la tabla SOCIOS un nuevo registro que introduciras por teclado
 5. Elimina el socio con el DNI que introduzcas por teclado
-6. Actualiza el importe a partir de un porcentaje introducido por teclado
+6. Pide por teclado el dni de un socio y cambia su importe por el que escribas por teclado
 0. Salir del programa
 '''
 
@@ -205,4 +203,4 @@ def MostrarMenu():
             opcion = int(input("Opcion: "))
             return opcion
         except:
-            print("Opcion incorrecta, debe ser un numero")      
+            print("Opcion incorrecta, debe ser un numero")
