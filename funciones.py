@@ -117,6 +117,42 @@ def Insertar_Socio(db,socio):
         print("Error al hacer la consulta")
         db.rollback()
 
+#5
+def borrar(db):
+    sql="SELECT DNI FROM SOCIOS"
+    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+    try:
+        cursor.execute(sql)
+        registros = cursor.fetchall()
+        for registro in registros:
+            print("-- DNI:",registro["DNI"])
+    except:
+        print("Error al hacer la consulta")
+def Borrar_Socio(db,d):
+    sql = "DELETE FROM SOCIOS WHERE DNI='%s'" % d
+    cursor = db.cursor()
+    resp=input("¿Ralmente quieres borrar al alumno '%s'? (pulsa 's' para si)" % d)
+    if resp=="s":
+        try:
+            cursor.execute(sql)
+            db.commit()
+            registros=cursor.fetchall()
+            if cursor.rowcount==0:
+                print("No hay socios con ese dni")
+        except:
+            print("Error al mostrar la consulta")
+            db.rollback()
+def borrar_dni(db):
+    sql="SELECT DNI FROM SOCIOS"
+    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+    try:
+        cursor.execute(sql)
+        registros = cursor.fetchall()
+        for registro in registros:
+            print("-- DNI:",registro["DNI"])
+    except:
+        print("Error al hacer la consulta")
+        
 def MostrarMenu():
     menu = '''
 1. Lista informacion de los socios e indica el total de socios
